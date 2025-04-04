@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Typography from "../../components/typography";
 import { skillsList } from "./constants";
-import { ScrollWrapper, ScrollWrapperInner, SkillsContainer, textSx } from "./styles";
+import { SkillsContainer, textSx } from "./styles";
 import './styles/css.css';
 
 const SkillBanner: React.FC<{}> = () => {
@@ -11,7 +11,6 @@ const SkillBanner: React.FC<{}> = () => {
     const scrollers = document.querySelectorAll('.scroller');
 
     if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      console.log('yay')
       addAnimation();
     }
 
