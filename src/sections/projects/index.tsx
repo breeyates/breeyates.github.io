@@ -1,8 +1,8 @@
 import { forwardRef } from "react";
-import Button from "../../components/button";
 import Typography from "../../components/typography";
-import { ContentBox, Line, RotatedText, SideLabelContainer, ProjectsContainer, ButtonBox } from "./styles";
-import SugarRush from "./tabs/sugar-rush";
+import { ContentBox, Line, RotatedText, SideLabelContainer, ProjectsContainer, ProjectBox } from "./styles";
+import { projects } from "./constants";
+import ImageSlideshow from "../../components/image-slideshow";
 
 const Projects = forwardRef<any, {}>((_, ref) => {
     return (
@@ -19,10 +19,21 @@ const Projects = forwardRef<any, {}>((_, ref) => {
                  </RotatedText>
             </SideLabelContainer>
             <ContentBox>
-                <SugarRush />
-            <ButtonBox>
-                <Button label={"NEXT →"} color="yellow" onClick={() => console.log('hi')} />
-            </ButtonBox>
+                {projects.map(({ title, description, images, imageSx, imageWidth }) => (
+                    <ProjectBox key={title}>
+                        <Typography
+                        color="secondary"
+                        text={title}
+                        sx={{fontSize: '32px', fontWeight: 700, textTransform: "uppercase",}}
+                        />
+                        <Typography
+                          color="secondary"
+                          text={description}
+                          sx={{fontSize: '22px', fontWeight: 400}}
+                        />
+                        <ImageSlideshow imageSrcs={images} sx={imageSx} imageWidth={imageWidth} />
+                    </ProjectBox>
+                ))}
             </ContentBox>
         </ProjectsContainer>
     );

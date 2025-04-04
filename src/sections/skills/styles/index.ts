@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { colors } from "../../../styles";
 
 export const SkillsContainer = styled.div`
@@ -16,25 +16,14 @@ export const SkillsContainer = styled.div`
 `;
 
 export const ScrollWrapper = styled.div`
+  max-width: 100%;
+`;
+
+export const ScrollWrapperInner = styled.div`
+  padding-block: 1rem;
   display: flex;
-  min-width: 200%;
-`;
-
-const scrollLeftToRight = keyframes`
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-`;
-
-export const ScrollText = styled.div`
-  display: inline-block;
-  animation: ${scrollLeftToRight} 100s linear infinite;
-  font-size: 1.25rem;
-  color: white;
-  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
 `;
 
 export const textSx = {

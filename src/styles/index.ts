@@ -3,6 +3,7 @@ export const colors = {
     black: '#171717',
     main: '#F1BF00',
     grey: '#2F2F2F',
+    lightGrey: '#E4E4E4',
 }
 
 export const appStyle: React.CSSProperties = {

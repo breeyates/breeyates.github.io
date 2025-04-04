@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { colors } from "../../../styles";
 
-export const HeaderContainer = styled.div`
-  background-color: ${colors.black};
+export const HeaderContainer = styled.div<{darkMode: boolean}>`
+  background-color: ${props => props.darkMode ? colors.black : colors.lightGrey };
   width: 100%;
   height: 600px;
   border-radius: 12px;
@@ -29,7 +29,6 @@ export const nameSx: React.CSSProperties = {
   fontWeight: 400,
   lineHeight: 1,
   position: 'relative',
-  zIndex: 2,
 };
 
 export const cursorSx = (x: number, y: number):React.CSSProperties => ({
@@ -42,4 +41,5 @@ export const cursorSx = (x: number, y: number):React.CSSProperties => ({
     borderRadius: '300px',
     position: 'absolute',
     pointerEvents: 'none',
+    mixBlendMode: 'difference',
 });

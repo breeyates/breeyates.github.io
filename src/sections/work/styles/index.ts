@@ -52,6 +52,7 @@ export const CompanyContainer = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
+  gap: 20px;
   justify-content: space-between;
 `;
 
@@ -59,4 +60,5 @@ export const CompanyTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 40%;
+  min-width: 40%;
 `;

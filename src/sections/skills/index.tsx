@@ -1,21 +1,59 @@
+import { useEffect } from "react";
 import Typography from "../../components/typography";
 import { skillsList } from "./constants";
-import { ScrollText, ScrollWrapper, SkillsContainer, textSx } from "./styles";
+import { ScrollWrapper, ScrollWrapperInner, SkillsContainer, textSx } from "./styles";
+import './styles/css.css';
 
 const SkillBanner: React.FC<{}> = () => {
-  const skillString = skillsList.join("\u25CF");
+  const dot = "\u25CF";
+
+  useEffect(() => {
+    const scrollers = document.querySelectorAll('.scroller');
+
+    if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      console.log('yay')
+      addAnimation();
+    }
+
+    function addAnimation() {
+      scrollers.forEach(scroller => {
+        scroller.setAttribute('data-animated', 'true');
+
+        const scrollerInner = scroller.querySelector('.scroller_inner');
+
+        const scrollerContent = Array.from(scrollerInner?.children || []);
+
+        scrollerContent.forEach(item => {
+          const duplicatedItem: any = item.cloneNode(true);
+          duplicatedItem.setAttribute('aria-hidden', true);
+          scrollerInner?.append(duplicatedItem);
+        })
+      })
+    }
+  }, []);
+
   return (
     <SkillsContainer>
-        <ScrollWrapper>
-            <ScrollText>
-                <Typography
-                  text={skillString}
-                  variant="anton"
-                  color="yellow"
-                  sx={textSx}
-                />
-            </ScrollText>
-      </ScrollWrapper>
+        <div className="scroller">
+          <div className="scroller_inner">
+              {skillsList.map(skill => (
+                <div className="item">
+                  <Typography
+                    text={skill}
+                    variant="anton"
+                    color="yellow"
+                    sx={textSx}
+                  />
+                  <Typography
+                    text={dot}
+                    variant="anton"
+                    color="yellow"
+                    sx={{...textSx, marginTop: '-8px'}}
+                  />
+                </div>
+              ))}
+            </div>
+      </div>
     </SkillsContainer>
   );
 }

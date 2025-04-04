@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "../../../styles";
 
 export const ProjectsContainer = styled.div`
-  height: 600px;
+  height: fit-content;
   display: flex;
   flex-direction: row;
   gap: 48px;
@@ -37,8 +37,16 @@ export const ContentBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 16px;
+  gap: 62px;
   height: 100%;
+`;
+
+export const ProjectBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px;
+  justify-content: space-between;
 `;
 
 export const ButtonBox = styled.div`

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Tab from "../tab";
 import { navigationBarSx, tabsSx } from "./styles";
+import { Button } from "@mui/material";
 
 type NavigationBarProps = {
     sectionRefs: {
@@ -33,7 +34,9 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ sectionRefs }) => {
                 onClick={() => handleTabClick(tab)}
               />
           ))}
-          <Tab text="↓ Resume" sx={{textDecoration: 'underline'}} />
+          <Button sx={{ padding: 0, textTransform: 'none' }} variant="text" href="/breanna-yates-resume.pdf" download component="a">
+            <Tab text="↓ Resume" sx={{textDecoration: 'underline'}} />
+          </Button>
         </div>
     </div>
     );

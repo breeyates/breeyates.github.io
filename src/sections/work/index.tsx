@@ -16,7 +16,7 @@ const Work = forwardRef<any, {}>((_, ref) => {
         </SideLabelContainer>
         <ContentBox>
           {work.map(({ company, positions, images, imageSx, imageWidth }) => (
-            <CompanyContainer key={company}>
+            <CompanyContainer key={company} id={`company-container-${company}`}>
               <CompanyTextContainer>
                 <Typography
                   text={company}
@@ -48,16 +48,6 @@ const Work = forwardRef<any, {}>((_, ref) => {
               />
             </CompanyContainer>
           ))}
-          <Typography
-            text="NEXT →"
-            sx={{
-              textDecoration: "underline",
-              fontSize: "32px",
-              fontWeight: 600,
-              marginLeft: "auto",
-              marginTop: "auto",
-            }}
-          />
         </ContentBox>
       </WorkContainer>
     );
