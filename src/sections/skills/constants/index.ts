@@ -1,0 +1,17 @@
+export const skillsList = [
+    'Javascript',
+    'Typescript',
+    'React',
+    'HTML',
+    'CSS',
+    'NextJS',
+    'NestJS',
+    'Node',
+    'Jest',
+    'Storybook',
+    'MUI',
+    'Styled Components',
+    'Express',
+    'PostgreSQL',
+    'TailwindCSS',
+];

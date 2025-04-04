@@ -1,10 +1,12 @@
+import { forwardRef } from "react";
+import Button from "../../components/button";
 import Typography from "../../components/typography";
-import { ContentBox, Line, RotatedText, SideLabelContainer, ProjectsContainer } from "./styles";
+import { ContentBox, Line, RotatedText, SideLabelContainer, ProjectsContainer, ButtonBox } from "./styles";
+import SugarRush from "./tabs/sugar-rush";
 
-const Projects: React.FC<any> = ({}: any) => {
-
+const Projects = forwardRef<any, {}>((_, ref) => {
     return (
-        <ProjectsContainer>
+        <ProjectsContainer ref={ref}>
             <SideLabelContainer>
                 <Typography
                   text="02"
@@ -17,18 +19,13 @@ const Projects: React.FC<any> = ({}: any) => {
                  </RotatedText>
             </SideLabelContainer>
             <ContentBox>
-                <Typography color="secondary" text="SUGAR RUSH" sx={{fontSize: '32px', fontWeight: 700}} />
-                <Typography color="secondary" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
-                  sx={{fontSize: '22px', fontWeight: 400}}
-                />
-                <Typography
-                    text="NEXT →"
-                    color="yellow"
-                    sx={{textDecoration: 'underline', fontSize: '32px', fontWeight: 600, marginLeft: 'auto', marginTop: 'auto'}}
-                />
+                <SugarRush />
+            <ButtonBox>
+                <Button label={"NEXT →"} color="yellow" onClick={() => console.log('hi')} />
+            </ButtonBox>
             </ContentBox>
         </ProjectsContainer>
     );
-};
+});
 
 export default Projects;

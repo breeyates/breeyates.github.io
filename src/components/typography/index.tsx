@@ -7,6 +7,7 @@ export interface TypographyProps {
     variant?: 'anton' |'inter';
     color?: 'primary' | 'secondary' |'yellow';
     sx?: any;
+    userSelect?: boolean;
 }
 
 const Typography:React.FC<TypographyProps> = ({
@@ -14,10 +15,11 @@ const Typography:React.FC<TypographyProps> = ({
     variant = 'inter',
     color = 'primary',
     sx,
+    userSelect = true,
 }: TypographyProps) => {
     const typographyColor = chooseTypographyColor(color);
     const typographyVariant = typographyVariants[variant as keyof typeof typographyVariants]
-    const typographyStyles = typographySx(typographyVariant, typographyColor, sx);
+    const typographyStyles = typographySx(typographyVariant, typographyColor, sx, userSelect);
     return (
         <MUITypography sx={typographyStyles}>{text}</MUITypography>
     );

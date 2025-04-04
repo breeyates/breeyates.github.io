@@ -7,6 +7,7 @@ export const navigationBarSx: React.CSSProperties  = {
     display: 'flex',
     boxSizing: 'border-box',
     alignItems: 'center',
+    marginBottom: '-62px',
 }
 
 export const tabsSx: React.CSSProperties = {

@@ -16,12 +16,5 @@ export const appStyle: React.CSSProperties = {
     position: 'absolute',
     top: 0,
     left: 0, 
-}
-
-export const content: React.CSSProperties = {
-    display: 'flex',
     gap: '62px',
-    flexDirection: 'column',
-    width: '100%',
-    overflow: 'hidden',
 }

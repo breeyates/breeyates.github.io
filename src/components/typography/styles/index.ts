@@ -2,10 +2,11 @@ import "@fontsource/inter";
 import "@fontsource/anton"; 
 import { colors } from "../../../styles";
 
-export const typographySx: any = (variant: any, color: string, sx: any) => ({
+export const typographySx: any = (variant: any, color: string, sx: any, userSelect?: boolean) => ({
     ...variant,
     color,
     ...sx,
+    userSelect: userSelect ? 'text' : 'none',
 })
 
 export const typographyVariants: any = {

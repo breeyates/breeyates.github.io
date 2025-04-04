@@ -2,12 +2,14 @@ import styled from "styled-components";
 import { colors } from "../../../styles";
 
 export const ProjectsContainer = styled.div`
-  width: 100%;
   height: 600px;
   display: flex;
   flex-direction: row;
   gap: 48px;
   background-color: ${colors.grey};
+  margin-left: -48px;
+  margin-right: -48px;
+  padding: 48px;
 `;
 
 export const SideLabelContainer = styled.div`
@@ -26,8 +28,7 @@ export const Line = styled.div`
 `;
 
 export const RotatedText = styled.div`
-  writing-mode: vertical-lr; 
-  text-orientation: sideways;
+  writing-mode: sideways-lr; 
   white-space: nowrap;
 `;
 
@@ -38,4 +39,9 @@ export const ContentBox = styled.div`
   justify-content: flex-start;
   gap: 16px;
   height: 100%;
+`;
+
+export const ButtonBox = styled.div`
+  margin-left: auto;
+  margin-top: auto;
 `;

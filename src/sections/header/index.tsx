@@ -1,10 +1,9 @@
-import { HeaderContainer, SubTextContainer, cursorSx } from "./styles";
+import { HeaderContainer, SubTextContainer, cursorSx, nameSx } from "./styles";
 import Typography from "../../components/typography";
 import useMousePosition from "../../hooks/useMousePosition";
 
-const Header: React.FC<any> = ({}: any) => {
+const Header: React.FC<{}> = () => {
     const { clientX, clientY } = useMousePosition();
-    console.log(clientX, clientY);
 
     return (
     <HeaderContainer>
@@ -12,18 +11,21 @@ const Header: React.FC<any> = ({}: any) => {
           text="BREE YATES"
           variant="anton"
           color="yellow"
-          sx={{fontSize: '260px', fontWeight: 400, lineHeight: 1,}}
+          sx={nameSx}
+          userSelect={false}
         />
-        {/* <div style={cursorSx(clientX, clientY)} /> */}
+        <div style={cursorSx(clientX, clientY)} />
         <SubTextContainer>
             <Typography
-                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
-                color="secondary"
-                sx={{textAlign: 'right', fontSize: '24px', fontWeight: 400}}
+                text="Hello! I'm Bree, a full-stack developer based in Denver, CO. My journey into development is rooted in years of freelance graphic design work, which sparked my passion for front-end development. I have expertise in a wide range of front-end and full-stack technologies, including React, Next.js, Styled Components, TailwindCSS, NestJS, and PostgreSQL. Outside of coding, I enjoy cooking, reading, and playing tennis."
+                color="primary"
+                userSelect={false}
+                sx={{textAlign: 'right', fontSize: '24px', fontWeight: 400, zIndex: 1,}}
             />
             <Typography
               text="SEE MY WORK →"
               color="secondary"
+              userSelect={false}
               sx={{textDecoration: 'underline', fontSize: '32px'}}
             />
         </SubTextContainer>

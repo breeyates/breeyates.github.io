@@ -10,6 +10,8 @@ export const HeaderContainer = styled.div`
   align-items: center;
   padding: 36px;
   box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
 `;
 
 export const SubTextContainer = styled.div`
@@ -22,13 +24,22 @@ export const SubTextContainer = styled.div`
  max-width: 60%;
 `;
 
-export const cursorSx = (x: any, y: any):React.CSSProperties => ({
-    height: '200px',
-    width: '200px',
-    top: y - 100,
-    left: x - 100,
+export const nameSx: React.CSSProperties = {
+  fontSize: '260px',
+  fontWeight: 400,
+  lineHeight: 1,
+  position: 'relative',
+  zIndex: 2,
+};
+
+export const cursorSx = (x: number, y: number):React.CSSProperties => ({
+    height: '300px',
+    width: '300px',
+    top: y - 200,
+    left: x - 200,
     backgroundColor: colors.white,
-    filter: 'blur(5px)',
-    borderRadius: '200px',
+    filter: 'blur(10px)',
+    borderRadius: '300px',
     position: 'absolute',
+    pointerEvents: 'none',
 });
