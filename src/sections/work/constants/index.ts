@@ -22,7 +22,7 @@ export const work: WorkOptions[] = [
                 description: 'Developed UI using Typescript, React, and NextJS for a seamless user experience. Engineered backend solutions using NestJS, and PostgreSQL, creating scalable and efficient server-side functionality. Contributed to the development and integration of a reusable component library, including the creation of 20+ components, optimizing development processes, and reducing time-to-market- for new features.',
             },
         ],
-        images: ["/flexgen/home.png", "/flexgen/monitoring.png"],
+        images: [],
         imageSx: { height: '400px' },
         imageWidth: '700px',
     },
