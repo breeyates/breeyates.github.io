@@ -18,7 +18,7 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
             {imageSrcs.map((img, index) => (
                 <img
                     key={index}
-                    src={img}
+                    src={`${process.env.PUBLIC_URL}${img}`}
                     alt={`${img}-${index}`}
                     style={imageSx(selectedImage === index, imageWidth)}
                     onMouseEnter={() => setSelectedImage(index)}
